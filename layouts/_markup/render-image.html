@@ -1,0 +1,39 @@
+{{- $image := .Page.Resources.GetMatch .Destination -}}
+{{- $alt := .PlainText | safeHTML -}}
+{{- $caption := .Title | safeHTML -}}
+
+{{- if $image -}}
+  {{- $small := $image.Resize "400x webp q80" -}}
+  {{- $medium := $image.Resize "800x webp q80" -}}
+  {{- $large := $image.Resize "1200x webp q80" -}}
+
+  <figure class="image-figure">
+    <img
+      src="{{ $medium.RelPermalink }}"
+      srcset="
+        {{ $small.RelPermalink }} 400w,
+        {{ $medium.RelPermalink }} 800w,
+        {{ $large.RelPermalink }} 1200w
+      "
+      sizes="(max-width: 400px) 400px, (max-width: 800px) 800px, 1200px"
+      alt="{{ $alt }}"
+      loading="lazy"
+      decoding="async"
+      width="{{ $medium.Width }}"
+      height="{{ $medium.Height }}"
+    />
+    {{- if $caption -}}
+      <figcaption>{{ $caption }}</figcaption>
+    {{- end -}}
+  </figure>
+{{- else -}}
+  <img 
+    src="{{ .Destination | safeURL }}" 
+    alt="{{ $alt }}"
+    loading="lazy"
+    decoding="async"
+  />
+  {{- if $caption -}}
+    <p class="image-caption">{{ $caption }}</p>
+  {{- end -}}
+{{- end -}}

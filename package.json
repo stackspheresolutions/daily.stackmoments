@@ -1,0 +1,27 @@
+{
+  "name": "stack-moments-daily",
+  "version": "1.0.0",
+  "description": "A modern Hugo-powered news blog for technology and programming insights",
+  "scripts": {
+    "dev": "hugo server -D --bind 0.0.0.0",
+    "build": "hugo --minify",
+    "preview": "hugo server --bind 0.0.0.0",
+    "clean": "rm -rf public resources"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yourusername/stack-moments-daily.git"
+  },
+  "keywords": [
+    "hugo",
+    "blog",
+    "tech-news",
+    "programming",
+    "software-development"
+  ],
+  "author": "Stack Moments Team",
+  "license": "MIT",
+  "devDependencies": {
+    "hugo-bin": "^0.111.0"
+  }
+}

@@ -1,0 +1,14 @@
+name = "stack-moments-daily"
+pages_build_output_dir = "public"
+
+[build]
+command = "hugo --minify"
+
+[[env_vars]]
+HUGO_VERSION = "0.120.0"
+
+[[env_vars]]  
+NODE_VERSION = "18"
+
+[build.environment]
+HUGO_ENV = "production"
