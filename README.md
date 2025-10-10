@@ -146,3 +146,10 @@ This project is licensed under the MIT License. See the LICENSE file for details
 ## Support
 
 For questions or issues, please create an issue in the GitHub repository.
+
+# Full site deployment
+hugo --minify
+aws s3 sync ./public/ s3://daily.stackmoments --delete
+
+# Or use your deployment script
+.\deploy.ps1
