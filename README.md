@@ -2,12 +2,17 @@
 
 A modern Hugo-powered news blog focused on technology, programming, and software development insights.
 
-## Features
+## 🌐 Live Site
+- **GitHub Pages**: https://stackspheresolutions.github.io/daily.stackmoments/
+- **Custom Domain**: Ready for daily.stackmoments.com setup
+
+## 🚀 Features
 
 - **Fast and Responsive**: Built with Hugo for lightning-fast load times
-- **Modern Design**: Clean, Medium-like reading experience with PaperMod theme
+- **Modern Design**: Beautiful Blowfish theme with ocean color scheme
 - **Rich Content Types**: Support for articles, news briefs, and topic pages
 - **Enhanced Images**: Responsive image processing with WebP support
+- **Automatic Deployment**: GitHub Actions workflow for seamless updates
 - **Code Highlighting**: Syntax highlighting with copy buttons
 - **Search Functionality**: Built-in search powered by Fuse.js
 - **Comments System**: Giscus integration for GitHub-based discussions
