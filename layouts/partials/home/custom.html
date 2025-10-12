@@ -8,11 +8,32 @@
   <a class="home-button home-button--primary" href="{{ relURL "/posts/" }}">Explore articles</a>
   <a class="home-button home-button--secondary" href="{{ relURL "/briefs/" }}">Read daily briefs</a>
     </div>
-    <ul class="home-hero__highlights">
-      <li>Research-backed coverage of AI, programming, and the modern web.</li>
-      <li>Daily briefs summarizing real-world infrastructure moves and market signals.</li>
-      <li>Topic hubs like Artificial Intelligence connect trends, tools, and practical guidance.</li>
-    </ul>
+    <div class="home-hero__highlights-grid">
+      <div class="highlight-card">
+        <div class="highlight-card__icon" aria-hidden="true">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 2L15 8L22 9L17 14L18 21L12 18L6 21L7 14L2 9L9 8L12 2Z" fill="currentColor"/>
+          </svg>
+        </div>
+        <p class="highlight-card__text">Research-backed coverage of AI, programming, and the modern web.</p>
+      </div>
+      <div class="highlight-card">
+        <div class="highlight-card__icon" aria-hidden="true">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M3 12H21M3 6H21M3 18H21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <p class="highlight-card__text">Daily briefs summarizing real-world infrastructure moves and market signals.</p>
+      </div>
+      <div class="highlight-card">
+        <div class="highlight-card__icon" aria-hidden="true">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M4 4H10V10H4V4ZM14 4H20V10H14V4ZM4 14H10V20H4V14ZM14 14H20V20H14V14Z" fill="currentColor"/>
+          </svg>
+        </div>
+        <p class="highlight-card__text">Topic hubs like Artificial Intelligence connect trends, tools, and practical guidance.</p>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -31,7 +52,7 @@
       <div class="home-article-card__meta">{{ .Date.Format "January 2, 2006" }}</div>
   <h3 class="home-article-card__title"><a href="{{ .RelPermalink | relURL }}">{{ .Title }}</a></h3>
       <p class="home-article-card__summary">{{ with .Params.summary }}{{ . }}{{ else }}{{ .Summary }}{{ end }}</p>
-      <a class="home-link" href="{{ .RelPermalink }}">Read the analysis</a>
+  <a class="home-link" href="{{ .RelPermalink | relURL }}">Read the analysis</a>
     </article>
     {{- end }}
   </div>
@@ -51,7 +72,7 @@
       <div class="home-brief-card__meta">{{ $brief.Date.Format "January 2, 2006" }}</div>
   <h3 class="home-brief-card__title"><a href="{{ $brief.RelPermalink | relURL }}">{{ $brief.Title }}</a></h3>
       <p class="home-brief-card__summary">{{ with $brief.Summary }}{{ . }}{{ else }}{{ $brief.Plain | truncate 220 "…" }}{{ end }}</p>
-      <a class="home-link" href="{{ $brief.RelPermalink }}">Open the full brief</a>
+  <a class="home-link" href="{{ $brief.RelPermalink | relURL }}">Open the full brief</a>
     </article>
     {{- end }}
   </div>
@@ -70,7 +91,7 @@
     <article class="home-topic-card">
   <h3 class="home-topic-card__title"><a href="{{ .RelPermalink | relURL }}">{{ .Title }}</a></h3>
       <p class="home-topic-card__summary">{{ with .Params.summary }}{{ . }}{{ else }}{{ .Summary }}{{ end }}</p>
-      <a class="home-link" href="{{ .RelPermalink }}">Visit the topic</a>
+  <a class="home-link" href="{{ .RelPermalink | relURL }}">Visit the topic</a>
     </article>
     {{- end }}
   </div>
