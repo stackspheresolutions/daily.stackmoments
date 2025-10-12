@@ -1,0 +1,112 @@
+{{- $page := . -}}
+<section class="home-hero container">
+  <div class="home-hero__content">
+    <p class="home-hero__eyebrow">Stack Moments Daily</p>
+    <h1 class="home-hero__title">Daily intelligence for software builders</h1>
+    <p class="home-hero__subtitle">{{ with $page.Site.Language.Params.description }}{{ . }}{{ else }}{{ $page.Site.Params.description }}{{ end }}</p>
+    <div class="home-hero__actions">
+  <a class="home-button home-button--primary" href="{{ relURL "/posts/" }}">Explore articles</a>
+  <a class="home-button home-button--secondary" href="{{ relURL "/briefs/" }}">Read daily briefs</a>
+    </div>
+    <ul class="home-hero__highlights">
+      <li>Research-backed coverage of AI, programming, and the modern web.</li>
+      <li>Daily briefs summarizing real-world infrastructure moves and market signals.</li>
+      <li>Topic hubs like Artificial Intelligence connect trends, tools, and practical guidance.</li>
+    </ul>
+  </div>
+</section>
+
+
+
+{{- $articles := first 2 (sort (where (where $page.Site.RegularPages "Section" "posts") "Draft" false) "Date" "desc") -}}
+{{- if gt (len $articles) 0 }}
+<section class="home-section container" aria-labelledby="deep-dives-heading">
+  <div class="home-section__header">
+    <h2 id="deep-dives-heading">Latest deep dives</h2>
+  <a class="home-link" href="{{ relURL "/posts/" }}">View all articles</a>
+  </div>
+  <div class="home-grid">
+    {{- range $articles }}
+    <article class="home-article-card">
+      <div class="home-article-card__meta">{{ .Date.Format "January 2, 2006" }}</div>
+  <h3 class="home-article-card__title"><a href="{{ .RelPermalink | relURL }}">{{ .Title }}</a></h3>
+      <p class="home-article-card__summary">{{ with .Params.summary }}{{ . }}{{ else }}{{ .Summary }}{{ end }}</p>
+      <a class="home-link" href="{{ .RelPermalink }}">Read the analysis</a>
+    </article>
+    {{- end }}
+  </div>
+</section>
+{{- end }}
+
+{{- $briefs := first 2 (sort (where (where $page.Site.RegularPages "Section" "briefs") "Draft" false) "Date" "desc") -}}
+{{- if gt (len $briefs) 0 }}
+<section class="home-section container" aria-labelledby="daily-briefing-heading">
+  <div class="home-section__header">
+    <h2 id="daily-briefing-heading">Daily briefing</h2>
+  <a class="home-link" href="{{ relURL "/briefs/" }}">Browse the archive</a>
+  </div>
+  <div class="home-briefs">
+    {{- range $index, $brief := $briefs }}
+    <article class="home-brief-card">
+      <div class="home-brief-card__meta">{{ $brief.Date.Format "January 2, 2006" }}</div>
+  <h3 class="home-brief-card__title"><a href="{{ $brief.RelPermalink | relURL }}">{{ $brief.Title }}</a></h3>
+      <p class="home-brief-card__summary">{{ with $brief.Summary }}{{ . }}{{ else }}{{ $brief.Plain | truncate 220 "…" }}{{ end }}</p>
+      <a class="home-link" href="{{ $brief.RelPermalink }}">Open the full brief</a>
+    </article>
+    {{- end }}
+  </div>
+</section>
+{{- end }}
+
+{{- $topics := first 3 (sort (where (where $page.Site.RegularPages "Section" "topics") "Draft" false) "Weight" "asc") -}}
+{{- if gt (len $topics) 0 }}
+<section class="home-section container" aria-labelledby="focus-areas-heading">
+  <div class="home-section__header">
+    <h2 id="focus-areas-heading">Focus areas</h2>
+  <a class="home-link" href="{{ relURL "/topics/" }}">Explore topic guides</a>
+  </div>
+  <div class="home-grid home-grid--topics">
+    {{- range $topics }}
+    <article class="home-topic-card">
+  <h3 class="home-topic-card__title"><a href="{{ .RelPermalink | relURL }}">{{ .Title }}</a></h3>
+      <p class="home-topic-card__summary">{{ with .Params.summary }}{{ . }}{{ else }}{{ .Summary }}{{ end }}</p>
+      <a class="home-link" href="{{ .RelPermalink }}">Visit the topic</a>
+    </article>
+    {{- end }}
+  </div>
+</section>
+{{- end }}
+<!-- 
+<section class="home-section container" aria-labelledby="capabilities-heading">
+  <div class="home-section__header">
+    <h2 id="capabilities-heading">What you get with Stack Moments Daily</h2>
+  </div>
+  <div class="home-feature-grid">
+    <div class="home-feature">
+      <h3>Searchable intelligence</h3>
+      <p>Built-in site search powered by Fuse.js helps you surface the briefs and articles you need in seconds.</p>
+    </div>
+    <div class="home-feature">
+      <h3>Actionable commentary</h3>
+      <p>Long-form analysis unpacks the implications of AI advances, framework updates, and software tooling shifts.</p>
+    </div>
+    <div class="home-feature">
+      <h3>Community-ready discussions</h3>
+      <p>Giscus-powered conversations keep feedback and insights anchored to every article when you're ready to engage.</p>
+    </div>
+    <div class="home-feature">
+      <h3>Performance-first delivery</h3>
+      <p>Hugo and the Blowfish theme generate a fast, accessible experience that works beautifully on any device.</p>
+    </div>
+  </div>
+</section>
+
+<section class="home-section container" aria-labelledby="stay-updated-heading">
+  <div class="home-section__header">
+    <h2 id="stay-updated-heading">Stay updated</h2>
+  </div>
+  <div class="home-card home-card--rss">
+    <p>Follow Stack Moments Daily via RSS to bring every new brief and deep dive into your reader of choice.</p>
+  <a class="home-button home-button--primary" href="{{ relURL "/index.xml" }}">Subscribe to RSS</a>
+  </div>
+</section> -->
