@@ -1,8 +1,13 @@
 ---
-title: "News Briefs"
-description: "Quick updates and breaking news from the world of technology and software development."
+title: "Articles"
+description: "All our technology articles, news, and analysis in one place."
+url: "/posts/"
 ---
 
-# Tech News Briefs
+# Articles
 
-Stay informed with our curated collection of the latest technology news and updates.
+All content has been moved to our main [Articles section](/posts/) for a better browsing experience.
+
+{{< button href="/posts/" target="_self" >}}
+View All Articles
+{{< /button >}}

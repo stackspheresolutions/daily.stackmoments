@@ -18,6 +18,7 @@ A modern Hugo-powered news blog focused on technology, programming, and software
 - **Comments System**: Giscus integration for GitHub-based discussions
 - **SEO Optimized**: Open Graph, Twitter Cards, and structured data
 - **Mobile Friendly**: Responsive design with dark/light theme toggle
+- **Fresh Content**: Daily AI and technology news coverage
 
 ## Quick Start
 

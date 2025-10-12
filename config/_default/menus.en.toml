@@ -21,19 +21,14 @@
   weight = 20
 
 [[main]]
-  name = "News Briefs"
-  pageRef = "briefs"
-  weight = 30
-
-[[main]]
   name = "Topics"
   pageRef = "topics"
-  weight = 40
+  weight = 30
 
 [[main]]
   name = "About"
   pageRef = "about"
-  weight = 50
+  weight = 40
 
 #[[main]]
 #  name = "Parent"
