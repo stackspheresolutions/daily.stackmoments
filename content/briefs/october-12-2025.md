@@ -1,18 +1,17 @@
 ---
-title: "Tech News Roundup - October 12, 2025: Major AI Partnerships and Indian Startup Surge"
+title: "October 12, 2025: Major AI Partnerships and Indian Startup Surge"
 date: 2025-10-12T00:00:00Z
 draft: false
 author: "Stack Moments Editorial"
 description: "Comprehensive coverage of October 12, 2025's biggest tech developments including OpenAI's massive AMD partnership, Anthropic's enterprise expansion, and India's thriving startup ecosystem."
-tags: ["technology", "AI", "artificial-intelligence", "OpenAI", "AMD", "Anthropic", "startups", "India", "funding", "enterprise", "hardware", "semiconductors"]
-categories: ["Technology", "News", "Startups"]
-series: ["Daily Tech News"]
+tags: ["technology", "AI", "artificial-intelligence", "OpenAI", "AMD", "Anthropic", "startups", "India", "funding", "daily-news"]
+categories: ["Technology", "News", "Daily Brief"]
 cover:
     image: "/images/tech-news-oct-12-2025.jpg"
     alt: "Tech News October 12, 2025 - AI Partnerships and Startup Growth"
     caption: "Major technology developments shaping the industry landscape"
 ShowToc: true
-TocOpen: true
+TocOpen: false
 ---
 
 The technology landscape witnessed significant developments on October 12, 2025, with major AI partnerships reshaping the industry, substantial enterprise deployments, and India's startup ecosystem hitting new milestones. Here's your comprehensive roundup of today's most impactful tech news.

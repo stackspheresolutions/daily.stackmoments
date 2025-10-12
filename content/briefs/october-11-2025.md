@@ -1,18 +1,17 @@
 ---
-title: "AI Tech News - October 11, 2025: Major Infrastructure Expansions and Model Releases"
+title: "October 11, 2025: Major Infrastructure Expansions and Model Releases"
 date: 2025-10-11T00:00:00Z
 draft: false
 author: "Stack Moments Editorial"
 description: "Comprehensive coverage of today's most significant AI developments including OpenAI's massive GPU partnerships, Microsoft's infrastructure push, and major model releases from Anthropic and DeepSeek."
-tags: ["AI", "artificial-intelligence", "machine-learning", "OpenAI", "Microsoft", "Google", "Anthropic", "DeepSeek", "technology", "software-development"]
-categories: ["Technology", "News"]
-series: ["AI in Development"]
+tags: ["AI", "artificial-intelligence", "machine-learning", "OpenAI", "Microsoft", "Google", "Anthropic", "DeepSeek", "technology", "daily-news"]
+categories: ["Technology", "News", "Daily Brief"]
 cover:
     image: "https://r2cdn.perplexity.ai/pplx-full-logo-primary-dark%402x.png"
     alt: "AI Tech News October 11, 2025"
     caption: "Latest developments in artificial intelligence and technology"
 ShowToc: true
-TocOpen: true
+TocOpen: false
 ---
 
 Based on comprehensive research of the latest AI tech news for today (October 11, 2025), here are the most significant developments in the artificial intelligence space:
