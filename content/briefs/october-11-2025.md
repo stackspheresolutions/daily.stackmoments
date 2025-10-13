@@ -4,6 +4,7 @@ date: 2025-10-11T00:00:00Z
 draft: false
 author: "Stack Moments Editorial"
 description: "Comprehensive coverage of today's most significant AI developments including OpenAI's massive GPU partnerships, Microsoft's infrastructure push, and major model releases from Anthropic and DeepSeek."
+summary: "Daily brief: massive AI infra pushes (OpenAI–AMD, Microsoft’s Nvidia factory), Anthropic Claude 4.5, DeepSeek advances and price cuts, Meta AI monetization, Tesla FSD progress, and key policy/market moves."
 tags: ["AI", "artificial-intelligence", "machine-learning", "OpenAI", "Microsoft", "Google", "Anthropic", "DeepSeek", "technology", "daily-news"]
 categories: ["Technology", "News", "Daily Brief"]
 cover:

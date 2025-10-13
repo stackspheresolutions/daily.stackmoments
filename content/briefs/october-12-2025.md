@@ -4,6 +4,7 @@ date: 2025-10-12T00:00:00Z
 draft: false
 author: "Stack Moments Editorial"
 description: "Comprehensive coverage of October 12, 2025's biggest tech developments including OpenAI's massive AMD partnership, Anthropic's enterprise expansion, and India's thriving startup ecosystem."
+summary: "Daily brief: OpenAI–AMD 6GW chip deal, ChatGPT app integrations, Anthropic’s Deloitte/IBM expansion, Meta Llama gov approval, India’s funding surge and new unicorn, plus EU AI investment and Chrome Gemini rollout."
 tags: ["technology", "AI", "artificial-intelligence", "OpenAI", "AMD", "Anthropic", "startups", "India", "funding", "daily-news"]
 categories: ["Technology", "News", "Daily Brief"]
 cover:
