@@ -12,7 +12,7 @@ cascade:
   showTableOfContents: true
   ShowReadingTime: true
   ShowWordCount: true
-  series: ["AWS Certified Data Engineer Associate"]
+#   series: ["AWS Certified Data Engineer Associate"]
 ---
 
 Welcome to the AWS Certified Data Engineer – Associate course series. Below you'll find all lessons. Open any lesson to see the series navigator and follow along in order.
