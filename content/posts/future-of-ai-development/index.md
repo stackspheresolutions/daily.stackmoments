@@ -7,7 +7,8 @@ description: "Exploring how artificial intelligence is transforming the way we w
 summary: "A comprehensive look at AI's impact on software development, from code generation to automated testing and deployment pipelines."
 tags: ["AI", "Machine Learning", "Software Development", "Automation", "Future Tech"]
 categories: ["Technology", "Programming"]
-series: ["AI in Development"]
+# Removed series to avoid showing under Courses taxonomy
+# series: ["AI in Development"]
 cover:
     image: "ai-development.webp"
     alt: "AI and Software Development Illustration"
