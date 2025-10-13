@@ -1,0 +1,6 @@
+[googleAnalytics]
+  anonymizeIP = true
+  respectDoNotTrack = true
+  useSessionStorage = false
+  # Hugo’s built-in GA template supports these settings for the older Universal Analytics.
+  # We also anonymize IP in the GA4 snippet override.

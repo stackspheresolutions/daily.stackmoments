@@ -1,0 +1,30 @@
+{{/* Only include GA in production builds (not on hugo server) */}}
+{{ if hugo.IsProduction }}
+<script
+  async
+  src="https://www.googletagmanager.com/gtag/js?id={{ site.Config.Services.GoogleAnalytics.ID }}"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);} 
+  gtag('js', new Date());
+
+  gtag('config', '{{ site.Config.Services.GoogleAnalytics.ID }}', {
+    'anonymize_ip': true
+  });
+</script>
+{{ end }}
+{{/*
+  Google Analytics (GA4) - privacy-friendly override
+  - Only loads in production builds (hugo.IsProduction)
+  - Anonymizes IP addresses
+  - Uses the GA4 Measurement ID from: [services.googleAnalytics].ID in hugo.toml
+*/}}
+{{ if and (hugo.IsProduction) (site.Config.Services.GoogleAnalytics.ID) }}
+  <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.Config.Services.GoogleAnalytics.ID }}"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}    
+    gtag('js', new Date());
+    gtag('config', '{{ site.Config.Services.GoogleAnalytics.ID }}', { 'anonymize_ip': true });
+  </script>
+{{ end }}
