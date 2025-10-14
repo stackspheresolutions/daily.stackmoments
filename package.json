@@ -6,7 +6,8 @@
     "dev": "hugo server -D --bind 0.0.0.0",
     "build": "hugo --minify",
     "preview": "hugo server --bind 0.0.0.0",
-    "clean": "rm -rf public resources"
+    "clean": "rm -rf public resources",
+    "favicons": "node scripts/generate-favicons.mjs"
   },
   "repository": {
     "type": "git",
@@ -22,6 +23,8 @@
   "author": "Stack Moments Team",
   "license": "MIT",
   "devDependencies": {
-    "hugo-bin": "^0.111.0"
+    "hugo-bin": "^0.111.0",
+    "favicons": "^7.2.0",
+    "sharp": "^0.33.5"
   }
 }
