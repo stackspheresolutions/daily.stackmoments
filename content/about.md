@@ -51,4 +51,4 @@ We're always eager to hear from our community. Whether you have story suggestion
 
 ---
 
-*Stack Moments Daily is powered by Stack Sphere Solutions, dedicated to creating valuable resources for the global developer community.*
+*Stack Moments Daily is dedicated to creating valuable resources for the global developer community.*

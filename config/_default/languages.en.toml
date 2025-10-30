@@ -12,7 +12,7 @@ title = "Stack Moments - Daily"
   # logo = "img/logo.png"
   # secondaryLogo = "img/secondary-logo.png"
   description = "Daily tech news, insights, and deep research for developers and tech professionals"
-  copyright = "© Stack Sphere Solutions - Stack Moments Daily"
+  copyright = "© Stack Moments Daily"
 
 # [params.author]
 #   name = "Your name here"
