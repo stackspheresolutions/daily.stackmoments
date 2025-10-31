@@ -3,7 +3,7 @@
 # https://blowfish.page/docs/getting-started/
 
 theme = "blowfish"
-baseURL = "https://stackspheresolutions.github.io/daily.stackmoments/"
+baseURL = "https://daily.stackmoments.com/"
 title = "Stack Moments - Daily"
 defaultContentLanguage = "en"
 
