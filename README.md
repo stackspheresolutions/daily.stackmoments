@@ -1,6 +1,6 @@
 # Stack Moments - Daily
 
-A modern Hugo-powered news blog focused on technology, programming, and software development insights.
+A modern Hugo-powered news blog focused on technology, programming, and software development insights.  
 
 ## 🌐 Live Site
 - **GitHub Pages**: https://stackspheresolutions.github.io/daily.stackmoments/
