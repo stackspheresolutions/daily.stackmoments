@@ -1,7 +1,5 @@
+# Hugo module config — Mainroad is installed as a git submodule, no Hugo module imports needed.
 module:
-  imports:
-  - path: github.com/adityatelange/hugo-PaperMod
-
   mounts:
   - source: assets
     target: assets

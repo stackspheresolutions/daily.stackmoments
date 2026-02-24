@@ -1,44 +1,52 @@
 # -- Main Menu --
-# The main menu is displayed in the header at the top of the page.
-# Acceptable parameters are name, pageRef, page, url, title, weight.
-# 
-# The simplest menu configuration is to provide:
-#   name = The name to be displayed for this menu link
-#   pageRef = The identifier of the page or section to link to
-#
-# By default the menu is ordered alphabetically. This can be
-# overridden by providing a weight value. The menu will then be
-# ordered by weight from lowest to highest.
+# Mainroad uses site.Menus.main for the top navigation bar.
+# Each entry requires: name, url (or pageRef), and weight.
 
 [[main]]
   name = "Home"
-  pageRef = "/"
+  url = "/"
   weight = 10
 
 [[main]]
   name = "Articles"
-  pageRef = "posts"
+  url = "/posts/"
   weight = 20
 
 [[main]]
   name = "News Briefs"
-  pageRef = "briefs"
+  url = "/briefs/"
   weight = 30
 
 [[main]]
+  name = "Courses"
+  url = "/series/"
+  weight = 35
+
+[[main]]
   name = "Topics"
-  pageRef = "topics"
+  url = "/topics/"
   weight = 40
 
 [[main]]
   name = "About"
-  pageRef = "about"
+  url = "/about/"
   weight = 50
 
-[[main]]
-  name = "Courses"
-  pageRef = "series"
-  weight = 35
+# -- Footer Menu --
+[[footer]]
+  name = "Home"
+  url = "/"
+  weight = 10
+
+[[footer]]
+  name = "About"
+  url = "/about/"
+  weight = 20
+
+[[footer]]
+  name = "RSS Feed"
+  url = "/index.xml"
+  weight = 30
 
 #[[main]]
 #  name = "Parent"

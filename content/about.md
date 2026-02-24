@@ -1,14 +1,9 @@
 ---
 title: "About Stack Moments Daily"
 description: "Learn about our mission to deliver daily tech insights for developers and tech professionals"
-showDate: false
-showAuthor: false
-showReadingTime: false
 ---
 
-{{< lead >}}
-Your trusted source for curated technology news, programming insights, and development trends.
-{{< /lead >}}
+> **Your trusted source for curated technology news, programming insights, and development trends.**
 
 ## Our Mission
 

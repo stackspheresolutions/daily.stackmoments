@@ -1,0 +1,178 @@
+/* ============================================
+   Stack Moments Daily — Mainroad Custom Styles
+   ============================================ */
+
+/* --- Brand header --- */
+.header {
+    border-bottom: 3px solid #0057b8;
+}
+
+.logo__title {
+    font-family: 'Georgia', 'Times New Roman', serif;
+    font-size: 1.6rem;
+    letter-spacing: -0.02em;
+}
+
+.logo__tagline {
+    font-size: 0.85rem;
+    color: #666;
+    font-style: italic;
+}
+
+/* --- Navigation --- */
+.menu__link {
+    font-size: 0.92rem;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+}
+
+/* --- Post content typography --- */
+.post__content {
+    line-height: 1.78;
+    font-size: 1.02rem;
+}
+
+.post__content h2 {
+    margin-top: 2rem;
+    margin-bottom: 0.75rem;
+    font-size: 1.5rem;
+    border-bottom: 1px solid #e8e8e8;
+    padding-bottom: 0.35rem;
+}
+
+.post__content h3 {
+    margin-top: 1.75rem;
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+}
+
+/* --- Tables --- */
+.post__content table {
+    width: 100%;
+    margin: 1.5rem 0;
+    border-collapse: collapse;
+    font-size: 0.93rem;
+}
+
+.post__content table th,
+.post__content table td {
+    padding: 0.6rem 0.85rem;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+.post__content table th {
+    background-color: #f0f4f9;
+    font-weight: 600;
+}
+
+.post__content table tr:nth-child(even) {
+    background-color: #f9fafb;
+}
+
+/* --- Code blocks --- */
+.highlight {
+    margin: 1.5rem 0;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+pre {
+    border-radius: 6px;
+    padding: 1rem;
+    overflow-x: auto;
+    font-size: 0.9rem;
+    line-height: 1.55;
+}
+
+/* --- Images --- */
+.post__content img {
+    border-radius: 6px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.10);
+    max-width: 100%;
+    height: auto;
+}
+
+.post__content figure {
+    margin: 1.75rem 0;
+    text-align: center;
+}
+
+.post__content figcaption {
+    margin-top: 0.5rem;
+    font-size: 0.88rem;
+    color: #666;
+    font-style: italic;
+}
+
+/* --- Blockquotes --- */
+.post__content blockquote {
+    border-left: 4px solid #0057b8;
+    margin: 1.5rem 0;
+    padding: 0.75rem 1.25rem;
+    background: #f4f8ff;
+    color: #333;
+    border-radius: 0 6px 6px 0;
+}
+
+.post__content blockquote p {
+    margin: 0;
+}
+
+/* --- External link icon --- */
+.external-link-icon {
+    font-size: 0.8em;
+    margin-left: 0.2em;
+    opacity: 0.65;
+}
+
+/* --- Sidebar enhancements --- */
+.widget__title {
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+}
+
+.widget-search__form {
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+/* --- Post meta --- */
+.post__meta {
+    font-size: 0.88rem;
+    color: #777;
+}
+
+/* --- Pagination --- */
+.pagination {
+    margin: 2rem 0;
+    text-align: center;
+}
+
+/* --- Mobile optimizations --- */
+@media (max-width: 768px) {
+    .post__content table {
+        font-size: 0.82rem;
+    }
+
+    .post__content table th,
+    .post__content table td {
+        padding: 0.4rem 0.5rem;
+    }
+
+    .logo__title {
+        font-size: 1.3rem;
+    }
+}
+
+/* --- Print styles --- */
+@media print {
+    .sidebar,
+    .post__footer,
+    .pagination,
+    .menu {
+        display: none;
+    }
+}
