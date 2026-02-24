@@ -1,0 +1,12 @@
+{{/* Sidebar widget listing series (courses) */}}
+{{ $seriesSection := site.GetPage "section" "series" }}
+{{ if $seriesSection }}
+<div class="widget-series widget">
+  <h4 class="widget__title">Courses</h4>
+  <ul class="widget__list">
+    {{ range $seriesSection.Pages -}}
+      <li class="widget__item"><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+    {{ end }}
+  </ul>
+</div>
+{{ end }}
