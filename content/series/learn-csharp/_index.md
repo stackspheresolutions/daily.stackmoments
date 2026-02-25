@@ -7,4 +7,4 @@ draft: false
 
 Welcome to the Learn C# series. This short course introduces C# fundamentals with practical examples and exercises. Use the lessons listed below to navigate the material.
 
-- [Lesson 01 — C# Basics](/series/learn-csharp/lesson-01-csharp-basics/)
+- [The Complete Guide to Equality in C#](/series/learn-csharp/complete-guide-to-equality/)

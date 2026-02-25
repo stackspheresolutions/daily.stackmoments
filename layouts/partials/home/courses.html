@@ -1,27 +1,59 @@
 {{- $seriesSection := site.GetPage "section" "series" -}}
 {{- if $seriesSection -}}
-<section class="home-section container" aria-labelledby="courses-heading">
-  <div class="home-section__header">
-    <h2 id="courses-heading">Courses</h2>
-    <a class="home-link" href="{{ relURL "/series/" }}">View all courses</a>
-  </div>
-  <div class="course-grid">
-    {{- range sort $seriesSection.Pages "Weight" "asc" -}}
-    <article class="course-card">
-      <a class="course-card__link" href="{{ .RelPermalink | relURL }}">
-        {{- with .Params.cover.image -}}
-        <div class="course-card__thumb">
-          <img src="{{ . }}" alt="{{ $.Title }} cover" loading="lazy" />
+<section class="courses-spotlight" aria-labelledby="courses-spotlight-heading">
+  <div class="container">
+    <div class="courses-spotlight__header">
+      <div class="courses-spotlight__label">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3L14.39 8.26L20 9.27L16 13.14L16.94 18.73L12 16.26L7.06 18.73L8 13.14L4 9.27L9.61 8.26L12 3Z" fill="currentColor"/></svg>
+        Featured Learning
+      </div>
+      <h2 id="courses-spotlight-heading">Courses &amp; Series</h2>
+      <p class="courses-spotlight__sub">Structured, hands-on courses to level up your skills — from cloud certifications to modern programming languages.</p>
+      <a class="home-button home-button--outline" href="{{ relURL "/series/" }}">Browse all courses</a>
+    </div>
+
+    <div class="course-cards">
+      {{- range sort $seriesSection.Pages "Weight" "asc" -}}
+      {{- $lessonCount := len .RegularPages -}}
+      {{- $slug := .Params.slug | default .File.BaseFileName -}}
+      <article class="course-card-v2 {{ if (findRE "aws|cloud|data-engineer" $slug) }}course-card-v2--aws{{ else if (findRE "csharp|c-sharp|dotnet" $slug) }}course-card-v2--csharp{{ else if (findRE "pyspark|spark|python" $slug) }}course-card-v2--spark{{ else }}course-card-v2--general{{ end }}">
+        <div class="course-card-v2__accent" aria-hidden="true">
+          {{- if (findRE "aws|cloud|data-engineer" $slug) -}}
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M6.76 12.245C6.279 11.634 6 10.849 6 10C6 7.791 7.791 6 10 6C10.849 6 11.634 6.279 12.245 6.76M6.76 12.245C5.714 12.618 5 13.621 5 14.75C5 16.269 6.231 17.5 7.75 17.5H17.25C18.769 17.5 20 16.269 20 14.75C20 13.477 19.179 12.394 18.029 12.049M6.76 12.245C7.19 12.091 7.662 12 8.154 12H8.5M18.029 12.049C18.188 11.568 18.25 11.056 18.25 10.5C18.25 8.015 16.235 6 13.75 6C12.847 6 12.003 6.266 11.297 6.726M18.029 12.049C17.637 12.017 17.257 12 16.875 12H16.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          {{- else if (findRE "csharp|c-sharp|dotnet" $slug) -}}
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M3 3L12 3M12 3L21 12L12 21L3 12L12 3Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M9 12H15M12 9V15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          {{- else if (findRE "pyspark|spark|python" $slug) -}}
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M13 3L5 13H12L11 21L19 11H12L13 3Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+          {{- else -}}
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M12 6.25278V19.2528M12 6.25278C10.8321 5.47686 9.24649 5 7.5 5C5.75351 5 4.16789 5.47686 3 6.25278V19.2528C4.16789 18.4769 5.75351 18 7.5 18C9.24649 18 10.8321 18.4769 12 19.2528M12 6.25278C13.1679 5.47686 14.7535 5 16.5 5C18.2465 5 19.8321 5.47686 21 6.25278V19.2528C19.8321 18.4769 18.2465 18 16.5 18C14.7535 18 13.1679 18.4769 12 19.2528" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          {{- end -}}
         </div>
-        {{- end -}}
-        <div class="course-card__body">
-          <h3 class="course-card__title">{{ .Title }}</h3>
-          <p class="course-card__summary">{{ with .Params.summary }}{{ . }}{{ else }}{{ .Summary }}{{ end }}</p>
+
+        <div class="course-card-v2__body">
+          {{- if gt $lessonCount 0 -}}
+          <div class="course-card-v2__badge">{{ $lessonCount }} {{ cond (eq $lessonCount 1) "lesson" "lessons" }}</div>
+          {{- end -}}
+          <h3 class="course-card-v2__title"><a href="{{ .RelPermalink | relURL }}">{{ .Title }}</a></h3>
+          <p class="course-card-v2__summary">{{ with .Params.description }}{{ . }}{{ else }}{{ with .Params.summary }}{{ . }}{{ else }}{{ .Summary | truncate 160 }}{{ end }}{{ end }}</p>
+          {{- if gt $lessonCount 0 -}}
+          <ul class="course-card-v2__lessons" aria-label="Lessons in {{ .Title }}">
+            {{- range first 3 .RegularPages -}}
+            <li><a href="{{ .RelPermalink | relURL }}">{{ .Title }}</a></li>
+            {{- end -}}
+            {{- if gt $lessonCount 3 -}}<li class="course-card-v2__lessons-more">+ {{ sub $lessonCount 3 }} more</li>{{- end -}}
+          </ul>
+          {{- end -}}
         </div>
-      </a>
-      <a class="home-link course-card__cta" href="{{ .RelPermalink | relURL }}">Start course</a>
-    </article>
-    {{- end -}}
+
+        <div class="course-card-v2__footer">
+          <a class="course-card-v2__cta" href="{{ .RelPermalink | relURL }}">
+            Start course
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12H19M13 6L19 12L13 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </article>
+      {{- end -}}
+    </div>
   </div>
 </section>
 {{- end -}}

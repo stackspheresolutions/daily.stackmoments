@@ -1,136 +1,107 @@
 {{- $page := . -}}
+
+{{/* ── HERO ────────────────────────────────────────────── */}}
 <section class="home-hero container">
   <div class="home-hero__content">
-    <p class="home-hero__eyebrow">Stack Moments Daily</p>
-    <h1 class="home-hero__title">Daily intelligence for software builders</h1>
+    <span class="home-hero__badge">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13 3L5 13H12L11 21L19 11H12L13 3Z"/></svg>
+      Stack Moments Daily
+    </span>
+    <h1 class="home-hero__title">Daily intelligence for<br class="home-hero__br"> software builders</h1>
     <p class="home-hero__subtitle">{{ with $page.Site.Language.Params.description }}{{ . }}{{ else }}{{ $page.Site.Params.description }}{{ end }}</p>
     <div class="home-hero__actions">
-  <a class="home-button home-button--primary" href="{{ relURL "/posts/" }}">Explore articles</a>
-  <a class="home-button home-button--secondary" href="{{ relURL "/briefs/" }}">Read daily briefs</a>
+      <a class="home-button home-button--primary" href="{{ relURL "/series/" }}">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 6.25278V19.2528M12 6.25278C10.8321 5.47686 9.24649 5 7.5 5C5.75351 5 4.16789 5.47686 3 6.25278V19.2528C4.16789 18.4769 5.75351 18 7.5 18C9.24649 18 10.8321 18.4769 12 19.2528M12 6.25278C13.1679 5.47686 14.7535 5 16.5 5C18.2465 5 19.8321 5.47686 21 6.25278V19.2528C19.8321 18.4769 18.2465 18 16.5 18C14.7535 18 13.1679 18.4769 12 19.2528" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Explore courses
+      </a>
+      <a class="home-button home-button--secondary" href="{{ relURL "/posts/" }}">Read articles</a>
+      <a class="home-button home-button--secondary" href="{{ relURL "/briefs/" }}">Daily briefs</a>
     </div>
     <div class="home-hero__highlights-grid">
       <div class="highlight-card">
         <div class="highlight-card__icon" aria-hidden="true">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M12 2L15 8L22 9L17 14L18 21L12 18L6 21L7 14L2 9L9 8L12 2Z" fill="currentColor"/>
-          </svg>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 3L14.39 8.26L20 9.27L16 13.14L16.94 18.73L12 16.26L7.06 18.73L8 13.14L4 9.27L9.61 8.26L12 3Z" fill="currentColor"/></svg>
         </div>
-        <p class="highlight-card__text">Research-backed coverage of AI, programming, and the modern web.</p>
+        <p class="highlight-card__text">Structured courses on AWS, C#, PySpark and more — learn at your own pace.</p>
       </div>
       <div class="highlight-card">
         <div class="highlight-card__icon" aria-hidden="true">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M3 12H21M3 6H21M3 18H21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-          </svg>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M3 12H21M3 6H21M3 18H21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
         </div>
-        <p class="highlight-card__text">Daily briefs summarizing real-world infrastructure moves and market signals.</p>
+        <p class="highlight-card__text">Daily briefs with real-world infrastructure moves and market signals.</p>
       </div>
       <div class="highlight-card">
         <div class="highlight-card__icon" aria-hidden="true">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M4 4H10V10H4V4ZM14 4H20V10H14V4ZM4 14H10V20H4V14ZM14 14H20V20H14V14Z" fill="currentColor"/>
-          </svg>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 4H10V10H4V4ZM14 4H20V10H14V4ZM4 14H10V20H4V14ZM14 14H20V20H14V14Z" fill="currentColor"/></svg>
         </div>
-        <p class="highlight-card__text">Topic hubs like Artificial Intelligence connect trends, tools, and practical guidance.</p>
+        <p class="highlight-card__text">Research-backed articles and topic hubs for AI, engineering and the modern web.</p>
       </div>
     </div>
   </div>
 </section>
 
+{{/* ── COURSES — prominently featured ─────────────────── */}}
+{{ partial "home/courses.html" . }}
 
-
-{{- $articles := first 2 (sort (where (where $page.Site.RegularPages "Section" "posts") "Draft" false) "Date" "desc") -}}
+{{/* ── LATEST ARTICLES ─────────────────────────────────── */}}
+{{- $articles := first 3 (sort (where (where $page.Site.RegularPages "Section" "posts") "Draft" false) "Date" "desc") -}}
 {{- if gt (len $articles) 0 }}
 <section class="home-section container" aria-labelledby="deep-dives-heading">
   <div class="home-section__header">
     <h2 id="deep-dives-heading">Latest deep dives</h2>
-  <a class="home-link" href="{{ relURL "/posts/" }}">View all articles</a>
+    <a class="home-link" href="{{ relURL "/posts/" }}">View all articles</a>
   </div>
   <div class="home-grid">
     {{- range $articles }}
     <article class="home-article-card">
       <div class="home-article-card__meta">{{ .Date.Format "January 2, 2006" }}</div>
-  <h3 class="home-article-card__title"><a href="{{ .RelPermalink | relURL }}">{{ .Title }}</a></h3>
+      <h3 class="home-article-card__title"><a href="{{ .RelPermalink | relURL }}">{{ .Title }}</a></h3>
       <p class="home-article-card__summary">{{ with .Params.summary }}{{ . }}{{ else }}{{ .Summary }}{{ end }}</p>
-  <a class="home-link" href="{{ .RelPermalink | relURL }}">Read the analysis</a>
+      <a class="home-link" href="{{ .RelPermalink | relURL }}">Read the analysis</a>
     </article>
     {{- end }}
   </div>
 </section>
 {{- end }}
 
+{{/* ── DAILY BRIEFS ─────────────────────────────────────── */}}
 {{- $briefs := first 2 (sort (where (where $page.Site.RegularPages "Section" "briefs") "Draft" false) "Date" "desc") -}}
 {{- if gt (len $briefs) 0 }}
 <section class="home-section container" aria-labelledby="daily-briefing-heading">
   <div class="home-section__header">
     <h2 id="daily-briefing-heading">Daily briefing</h2>
-  <a class="home-link" href="{{ relURL "/briefs/" }}">Browse the archive</a>
+    <a class="home-link" href="{{ relURL "/briefs/" }}">Browse the archive</a>
   </div>
   <div class="home-briefs">
     {{- range $index, $brief := $briefs }}
     <article class="home-brief-card">
       <div class="home-brief-card__meta">{{ $brief.Date.Format "January 2, 2006" }}</div>
-  <h3 class="home-brief-card__title"><a href="{{ $brief.RelPermalink | relURL }}">{{ $brief.Title }}</a></h3>
+      <h3 class="home-brief-card__title"><a href="{{ $brief.RelPermalink | relURL }}">{{ $brief.Title }}</a></h3>
       <p class="home-brief-card__summary">{{ with $brief.Summary }}{{ . }}{{ else }}{{ $brief.Plain | truncate 220 "…" }}{{ end }}</p>
-  <a class="home-link" href="{{ $brief.RelPermalink | relURL }}">Open the full brief</a>
+      <a class="home-link" href="{{ $brief.RelPermalink | relURL }}">Open the full brief</a>
     </article>
     {{- end }}
   </div>
 </section>
 {{- end }}
 
-{{/* Courses (series) cards on the home page */}}
-{{ partial "home/courses.html" . }}
-
+{{/* ── FOCUS AREAS ─────────────────────────────────────── */}}
 {{- $topics := first 3 (sort (where (where $page.Site.RegularPages "Section" "topics") "Draft" false) "Weight" "asc") -}}
 {{- if gt (len $topics) 0 }}
 <section class="home-section container" aria-labelledby="focus-areas-heading">
   <div class="home-section__header">
     <h2 id="focus-areas-heading">Focus areas</h2>
-  <a class="home-link" href="{{ relURL "/topics/" }}">Explore topic guides</a>
+    <a class="home-link" href="{{ relURL "/topics/" }}">Explore topic guides</a>
   </div>
   <div class="home-grid home-grid--topics">
     {{- range $topics }}
     <article class="home-topic-card">
-  <h3 class="home-topic-card__title"><a href="{{ .RelPermalink | relURL }}">{{ .Title }}</a></h3>
+      <h3 class="home-topic-card__title"><a href="{{ .RelPermalink | relURL }}">{{ .Title }}</a></h3>
       <p class="home-topic-card__summary">{{ with .Params.summary }}{{ . }}{{ else }}{{ .Summary }}{{ end }}</p>
-  <a class="home-link" href="{{ .RelPermalink | relURL }}">Visit the topic</a>
+      <a class="home-link" href="{{ .RelPermalink | relURL }}">Visit the topic</a>
     </article>
     {{- end }}
   </div>
 </section>
 {{- end }}
-<!-- 
-<section class="home-section container" aria-labelledby="capabilities-heading">
-  <div class="home-section__header">
-    <h2 id="capabilities-heading">What you get with Stack Moments Daily</h2>
-  </div>
-  <div class="home-feature-grid">
-    <div class="home-feature">
-      <h3>Searchable intelligence</h3>
-      <p>Built-in site search powered by Fuse.js helps you surface the briefs and articles you need in seconds.</p>
-    </div>
-    <div class="home-feature">
-      <h3>Actionable commentary</h3>
-      <p>Long-form analysis unpacks the implications of AI advances, framework updates, and software tooling shifts.</p>
-    </div>
-    <div class="home-feature">
-      <h3>Community-ready discussions</h3>
-      <p>Giscus-powered conversations keep feedback and insights anchored to every article when you're ready to engage.</p>
-    </div>
-    <div class="home-feature">
-      <h3>Performance-first delivery</h3>
-      <p>Hugo and the Blowfish theme generate a fast, accessible experience that works beautifully on any device.</p>
-    </div>
-  </div>
-</section>
 
-<section class="home-section container" aria-labelledby="stay-updated-heading">
-  <div class="home-section__header">
-    <h2 id="stay-updated-heading">Stay updated</h2>
-  </div>
-  <div class="home-card home-card--rss">
-    <p>Follow Stack Moments Daily via RSS to bring every new brief and deep dive into your reader of choice.</p>
-  <a class="home-button home-button--primary" href="{{ relURL "/index.xml" }}">Subscribe to RSS</a>
-  </div>
-</section> -->
