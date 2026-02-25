@@ -176,3 +176,61 @@ pre {
         display: none;
     }
 }
+
+/* --- Courses grid on home page --- */
+.course-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.course-card {
+    background: #fff;
+    border: 1px solid #e9eef6;
+    border-radius: 8px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.course-card__link {
+    color: inherit;
+    text-decoration: none;
+    display: block;
+    flex: 1 1 auto;
+}
+
+.course-card__thumb img {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+    display: block;
+}
+
+.course-card__body {
+    padding: 0.9rem 1rem;
+}
+
+.course-card__title {
+    margin: 0 0 0.35rem 0;
+    font-size: 1.05rem;
+}
+
+.course-card__summary {
+    margin: 0;
+    color: #555;
+    font-size: 0.95rem;
+}
+
+.course-card__cta {
+    display: block;
+    padding: 0.6rem 1rem;
+    border-top: 1px solid #eef4fb;
+    text-align: right;
+}
+
+@media (max-width: 640px) {
+    .course-card__thumb img { height: 110px; }
+}

@@ -79,6 +79,9 @@
 </section>
 {{- end }}
 
+{{/* Courses (series) cards on the home page */}}
+{{ partial "home/courses.html" . }}
+
 {{- $topics := first 3 (sort (where (where $page.Site.RegularPages "Section" "topics") "Draft" false) "Weight" "asc") -}}
 {{- if gt (len $topics) 0 }}
 <section class="home-section container" aria-labelledby="focus-areas-heading">

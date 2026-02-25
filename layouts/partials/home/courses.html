@@ -1,0 +1,27 @@
+{{- $seriesSection := site.GetPage "section" "series" -}}
+{{- if $seriesSection -}}
+<section class="home-section container" aria-labelledby="courses-heading">
+  <div class="home-section__header">
+    <h2 id="courses-heading">Courses</h2>
+    <a class="home-link" href="{{ relURL "/series/" }}">View all courses</a>
+  </div>
+  <div class="course-grid">
+    {{- range sort $seriesSection.Pages "Weight" "asc" -}}
+    <article class="course-card">
+      <a class="course-card__link" href="{{ .RelPermalink | relURL }}">
+        {{- with .Params.cover.image -}}
+        <div class="course-card__thumb">
+          <img src="{{ . }}" alt="{{ $.Title }} cover" loading="lazy" />
+        </div>
+        {{- end -}}
+        <div class="course-card__body">
+          <h3 class="course-card__title">{{ .Title }}</h3>
+          <p class="course-card__summary">{{ with .Params.summary }}{{ . }}{{ else }}{{ .Summary }}{{ end }}</p>
+        </div>
+      </a>
+      <a class="home-link course-card__cta" href="{{ .RelPermalink | relURL }}">Start course</a>
+    </article>
+    {{- end -}}
+  </div>
+</section>
+{{- end -}}
